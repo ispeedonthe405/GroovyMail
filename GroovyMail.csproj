@@ -12,8 +12,25 @@
     <UseWinUI>true</UseWinUI>
     <EnableMsixTooling>true</EnableMsixTooling>
     <SupportedOSPlatformVersion>10.0.19041.0</SupportedOSPlatformVersion>
+    <Nullable>enable</Nullable>
   </PropertyGroup>
   <ItemGroup>
+    <None Remove="javascript\CreateDivForSelection.js" />
+    <None Remove="javascript\CreateSpanForSelection.js" />
+    <None Remove="javascript\GetBodyAttribute.js" />
+    <None Remove="javascript\GetBodyInnerHTML.js" />
+    <None Remove="javascript\GetBodyOuterHTML.js" />
+    <None Remove="javascript\InitEditor.js" />
+    <None Remove="javascript\InsertElement.js" />
+    <None Remove="javascript\InsertInlineImage.js" />
+    <None Remove="javascript\SetBodyAttribute.js" />
+    <None Remove="javascript\SetBodyInnerHTML.js" />
+    <None Remove="javascript\SetBodyOuterHTML.js" />
+    <None Remove="javascript\SetBodyStyleProperty.js" />
+    <None Remove="javascript\SetElementAttribute.js" />
+    <None Remove="javascript\SetElementInnerHTML.js" />
+    <None Remove="javascript\SetElementOuterHTML.js" />
+    <None Remove="javascript\SetElementStyleProperty.js" />
     <None Remove="ux\MainWindow.xaml" />
   </ItemGroup>
 
@@ -25,6 +42,45 @@
     <Content Include="Assets\Square44x44Logo.targetsize-24_altform-unplated.png" />
     <Content Include="Assets\StoreLogo.png" />
     <Content Include="Assets\Wide310x150Logo.scale-200.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Include="javascript\CreateDivForSelection.js" />
+    <EmbeddedResource Include="javascript\CreateSpanForSelection.js" />
+    <EmbeddedResource Include="javascript\GetBodyAttribute.js">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="javascript\GetBodyInnerHTML.js">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="javascript\GetBodyOuterHTML.js">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="javascript\InitEditor.js">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="javascript\InsertElement.js" />
+    <EmbeddedResource Include="javascript\InsertInlineImage.js" />
+    <EmbeddedResource Include="javascript\SetBodyAttribute.js">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="javascript\SetBodyInnerHTML.js">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="javascript\SetBodyOuterHTML.js">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="javascript\SetBodyStyleProperty.js" />
+    <EmbeddedResource Include="javascript\SetElementAttribute.js">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="javascript\SetElementInnerHTML.js">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="javascript\SetElementOuterHTML.js">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="javascript\SetElementStyleProperty.js" />
   </ItemGroup>
 
   <ItemGroup>
@@ -41,10 +97,6 @@
   -->
   <ItemGroup Condition="'$(DisableMsixProjectCapabilityAddedByProject)'!='true' and '$(EnableMsixTooling)'=='true'">
     <ProjectCapability Include="Msix" />
-  </ItemGroup>
-  <ItemGroup>
-    <Folder Include="core\" />
-    <Folder Include="javascript\" />
   </ItemGroup>
   <ItemGroup>
     <Page Update="ux\MainWindow.xaml">
