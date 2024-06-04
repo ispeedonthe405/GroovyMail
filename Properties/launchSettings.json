@@ -1,0 +1,10 @@
+{
+  "profiles": {
+    "GroovyMail (Package)": {
+      "commandName": "MsixPackage"
+    },
+    "GroovyMail (Unpackaged)": {
+      "commandName": "Project"
+    }
+  }
+}
