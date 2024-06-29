@@ -32,6 +32,7 @@
     <None Remove="javascript\SetElementOuterHTML.js" />
     <None Remove="javascript\SetElementStyleProperty.js" />
     <None Remove="ux\MainWindow.xaml" />
+    <None Remove="ux\uc_NavMainHeader.xaml" />
   </ItemGroup>
 
   <ItemGroup>
@@ -86,7 +87,7 @@
   <ItemGroup>
     <PackageReference Include="MailKit" Version="4.6.0" />
     <PackageReference Include="Microsoft.Windows.SDK.BuildTools" Version="10.0.26100.1" />
-    <PackageReference Include="Microsoft.WindowsAppSDK" Version="1.5.240428000" />
+    <PackageReference Include="Microsoft.WindowsAppSDK" Version="1.5.240607001" />
     <Manifest Include="$(ApplicationManifest)" />
   </ItemGroup>
 
@@ -97,6 +98,16 @@
   -->
   <ItemGroup Condition="'$(DisableMsixProjectCapabilityAddedByProject)'!='true' and '$(EnableMsixTooling)'=='true'">
     <ProjectCapability Include="Msix" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Update="Assets\hubble-30th-cosmic-reef-2400x1200.jpg">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Page Update="ux\uc_NavMainHeader.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
   </ItemGroup>
   <ItemGroup>
     <Page Update="ux\MainWindow.xaml">
