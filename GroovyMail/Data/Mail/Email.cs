@@ -1,0 +1,13 @@
+﻿namespace GroovyMail.Data.Mail
+{
+    internal class Email : Record_Base
+    {
+        ///////////////////////////////////////////////////////////
+        #region Properties
+
+
+
+        #endregion Properties
+        ///////////////////////////////////////////////////////////
+    }
+}

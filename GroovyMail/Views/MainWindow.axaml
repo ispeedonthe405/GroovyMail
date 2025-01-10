@@ -1,0 +1,64 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:vm="using:GroovyMail.ViewModels"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+        x:Class="GroovyMail.Views.MainWindow"
+        x:DataType="vm:VM_MainWindow"
+        Icon="/Assets/groovymail.ico"
+        Title="GroovyMail">
+
+    <Design.DataContext>
+        <vm:VM_MainWindow/>
+    </Design.DataContext>
+
+	<Window.Styles>
+		<StyleInclude Source="/Styles/StyleDefaults.axaml" />
+	</Window.Styles>
+
+	<SplitView x:Name="splitview"
+			   IsPaneOpen="{Binding Splitview_open}"
+			   DisplayMode="CompactInline"
+			   CompactPaneLength="36"
+			   OpenPaneLength="225"
+			   HorizontalAlignment="Stretch">
+
+		<SplitView.Pane>
+
+			<Grid x:Name="PaneGrid">
+
+				<Grid.RowDefinitions>
+					<RowDefinition Height="48"/>
+					<RowDefinition Height="*"/>
+					<RowDefinition Height="48"/>
+				</Grid.RowDefinitions>
+
+				<StackPanel Grid.Row="0" Orientation="Horizontal" HorizontalAlignment="Stretch" VerticalAlignment="Center">
+					
+					<Button x:Name="btn_PaneToggle"
+							Margin="5,0,0,0"
+							ToolTip.Tip="Toggle left pane open or closed"
+							Command="{Binding ToggleSplitviewCommand}">
+						<Button.Content>
+							<TextBlock Text="="/>
+						</Button.Content>
+					</Button>
+					
+					<ComboBox x:Name="cb_Account"
+							  Margin="10,0,5,0"
+							  HorizontalAlignment="Stretch"
+							  Width="180"/>
+				
+				</StackPanel>
+
+			</Grid>
+
+		</SplitView.Pane>
+
+		<SplitView.Content>
+		</SplitView.Content>
+		
+	</SplitView>
+
+</Window>
