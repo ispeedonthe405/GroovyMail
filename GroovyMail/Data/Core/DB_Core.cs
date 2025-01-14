@@ -1,14 +1,25 @@
-﻿using System.Threading.Tasks;
+﻿using Microsoft.EntityFrameworkCore;
 
 namespace GroovyMail.Data.Core
 {
-    internal class DB_Core : DB_Base
+    internal class DB_Core_Context : DbContext
     {
-        public DB_Core() { }
+        public string DbFullPath { get; set; } = string.Empty;
+        public DbSet<DB_Core> Data { get; set; }
 
-        public override async Task Load()
+        public DB_Core_Context(string dbFullPath)
         {
-            await Task.Delay(1);
+            DbFullPath = dbFullPath;
         }
+
+        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+        {
+            optionsBuilder.UseSqlite($"Data Source={DbFullPath}");
+        }
+    }
+
+    internal class DB_Core
+    {
+        
     }
 }
