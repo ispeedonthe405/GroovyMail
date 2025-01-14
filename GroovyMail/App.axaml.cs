@@ -13,6 +13,8 @@ namespace GroovyMail
     {
         public override void Initialize()
         {
+            sbdotnet.Logger.UseTrace = true;
+
             AvaloniaXamlLoader.Load(this);
         }
 
